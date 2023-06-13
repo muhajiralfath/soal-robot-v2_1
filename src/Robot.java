@@ -9,39 +9,58 @@ public class Robot {
         this.direction = direction;
     }
 
+    public String getPosition(){
+        return direction + "->(" + "(" + x + "," + y + ")";
+    }
+
     public void move() {
-        if (direction.equals("NORTH")) {
-            y++;
-        } else if (direction.equals("EAST")) {
-            x++;
-        } else if (direction.equals("SOUTH")) {
-            y--;
-        } else if (direction.equals("WEST")) {
-            x--;
+        switch (direction) {
+            case "NORTH":
+                y++;
+                break;
+            case "EAST":
+                x++;
+                break;
+            case "SOUTH":
+                y--;
+                break;
+            case "WEST":
+                x--;
+                break;
         }
     }
 
     public void turnRight() {
-        if (direction.equals("NORTH")) {
-            direction = "EAST";
-        } else if (direction.equals("EAST")) {
-            direction = "SOUTH";
-        } else if (direction.equals("SOUTH")) {
-            direction = "WEST";
-        } else if (direction.equals("WEST")) {
-            direction = "NORTH";
+        switch (direction) {
+            case "NORTH":
+                direction = "EAST";
+                break;
+            case "EAST":
+                direction = "SOUTH";
+                break;
+            case "SOUTH":
+                direction = "WEST";
+                break;
+            case "WEST":
+                direction = "NORTH";
+                break;
         }
     }
 
     public void turnLeft() {
-        if (direction.equals("NORTH")) {
-            direction = "WEST";
-        } else if (direction.equals("WEST")) {
-            direction = "SOUTH";
-        } else if (direction.equals("SOUTH")) {
-            direction = "EAST";
-        } else if (direction.equals("EAST")) {
-            direction = "NORTH";
+        switch (direction) {
+            case "NORTH":
+                direction = "WEST";
+                break;
+            case "WEST":
+                direction = "SOUTH";
+                break;
+            case "SOUTH":
+                direction = "EAST";
+                break;
+            case "EAST":
+                direction = "NORTH";
+                break;
         }
     }
 
@@ -54,7 +73,7 @@ public class Robot {
             } else if (command == 'L') {
                 turnLeft();
             }
-            System.out.println(direction + "->(" + "(" + x + "," + y + ")");
+            System.out.println(getPosition());
         }
     }
 }
