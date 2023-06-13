@@ -13,6 +13,8 @@ public class RobotArena {
         System.out.print("Input perintah : ");
         String commands = scan.nextLine().toUpperCase();
 
+        Robot robot = new Robot(direction, x, y);
+        robot.doCommands(commands);
 
     }
 }
