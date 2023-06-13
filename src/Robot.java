@@ -39,8 +39,16 @@ public class Robot {
         }else if (direction.equals("EAST")){
             direction = "NORTH";
         }
+    }public void doCommands(String commands){
+        for (char command : commands.toCharArray()){
+            if (command == 'A'){
+                move();
+            } else if (command == 'R'){
+                turnRight();
+            }else if (command == 'L'){
+                turnLeft();
+            }
+            System.out.println(direction + "->(" + "("+ x + "," + y + ")");
+        }
     }
-
-
-
 }
