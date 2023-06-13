@@ -29,7 +29,18 @@ public class Robot {
         }else if (direction.equals("WEST")){
             direction = "NORTH";
         }
+    }public void turnLeft(){
+        if (direction.equals("NORTH")){
+            direction = "WEST";
+        }else if (direction.equals("WEST")){
+            direction = "SOUTH";
+        }else if (direction.equals("SOUTH")){
+            direction = "EAST";
+        }else if (direction.equals("EAST")){
+            direction = "NORTH";
+        }
     }
+
 
 
 }
